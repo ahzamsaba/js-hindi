@@ -18,3 +18,7 @@ console.table([accountId,accountEmail,accountPassword,accountCity,accountState])
 NOTE -> Prefer not to use var
         because of issue in block scope & functional scope
 */
+
+accountState = "BIHAR"
+
+console.log(accountState);
