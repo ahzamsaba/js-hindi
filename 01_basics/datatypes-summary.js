@@ -15,7 +15,7 @@ let userEmail;
 
 const id = Symbol('123')
 const anotherId = Symbol('123')
-console.log(id == anotherId);//false
+// console.log(id == anotherId);//false
 
 const bigNumber = 6516848941651564684n
 
@@ -37,6 +37,36 @@ const myFunction = function(){
     console.log("Helloooo!!!!!");
 }
 
-console.log(typeof myFunction);//functionlet x = 5;      // x is a number
+// console.log(typeof myFunction);//functionlet x = 5;      // x is a number
 x = "hello";    // now x is a string
 
+
+
+
+
+
+// *************************************************
+
+// Stack(Primitive) & Heap(Reference)
+//      copy             original
+
+// 1.Stack -> Primitive datatypes
+let myName = "Ahzam Saba"
+let anotherName = myName//copy of myName
+anotherName = "Asghar"//copy changed only
+
+// console.log(myName);//Ahzam Saba
+// console.log(anotherName);//Asghar
+
+
+// 2.Heap -> Non-primitive datatypes
+let userOne = {
+    email : "user@google.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userOne//reference
+userTwo.email = "ahzam@google.com"//original changed
+
+// console.log(userOne.email);//ahzam@google.com
+// console.log(userTwo.email);//ahzam@google.com
