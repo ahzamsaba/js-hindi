@@ -37,8 +37,7 @@ const myFunction = function(){
     console.log("Helloooo!!!!!");
 }
 
-// console.log(typeof myFunction);//functionlet x = 5;      // x is a number
-x = "hello";    // now x is a string
+// console.log(typeof myFunction);//function
 
 
 
