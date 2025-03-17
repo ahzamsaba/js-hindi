@@ -50,12 +50,39 @@ const users = [
 ]
 
 
-console.log(tinderUser);//{ id: '123abc', name: 'Yuviiii', isLoggedIn: false }
+// console.log(tinderUser);//{ id: '123abc', name: 'Yuviiii', isLoggedIn: false }
 
-console.log(Object.keys(tinderUser));//[ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.keys(tinderUser));//[ 'id', 'name', 'isLoggedIn' ]
 
-console.log(Object.values(tinderUser));//[ '123abc', 'Yuviiii', false ]
+// console.log(Object.values(tinderUser));//[ '123abc', 'Yuviiii', false ]
 
-console.log(Object.entries(tinderUser));//[ [ 'id', '123abc' ], [ 'name', 'Yuviiii' ], [ 'isLoggedIn', false ] ]
+// console.log(Object.entries(tinderUser));//[ [ 'id', '123abc' ], [ 'name', 'Yuviiii' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));//true
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));//true
+
+
+
+
+/********************class3************/
+const course = {
+    courseName : "js in hindi",
+    price : "999",
+    courseInstructor : "Hitesh"
+}
+
+// course.courseInstructor
+const {courseInstructor} = course
+console.log(courseInstructor);//Hitesh
+
+const {courseInstructor : instructor} = course
+console.log(instructor);//Hitesh
+
+//json
+// {
+//     "name" : "Ahzam",
+//     "course" : "js in hindi"
+// }
+
+
+//API call -> https://randomuser.me/api/
+//Use JSON Formatter to analyze it in tree form
