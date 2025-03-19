@@ -19,6 +19,57 @@ let a = 300    // GLOBAL SCOPE
 
 if(true){      // BLOCK SCOPE    
     let a = 10
-    console.log(a);// 10
+    // console.log(a);// 10
 }
-console.log(a);// 300
+// console.log(a);// 300
+
+
+
+
+/**********************SCOPES-2**********************/
+
+function one(){
+    const username = "Ahzam"
+
+    function two(){
+        const website = "YT"
+        // console.log(username)// Ahzam
+    }
+    // console.log(website)// ReferenceError: website is not defined
+
+    two()
+}
+
+one()
+
+if(true){
+    const username = "Ahzam"
+    
+    if(username == "Ahzam"){
+        const  website = " YT"
+        // console.log(username + website)//Ahzam YT
+    }
+
+    // console.log(website);// ReferenceError: website is not defined
+}
+
+// console.log(username)// ReferenceError: username is not defined
+
+
+
+// +++++++++++++++++++interesting+++++++++++++++++++
+
+console.log(addOne(5))
+function addOne(num){
+    return num+1
+}
+
+// console.log(addOne(5))// 6
+
+
+addTwo(5)// ReferenceError: Cannot access 'addTwo' before initialization
+const addTwo = function(num){
+    return num + 2
+}
+
+addTwo(5)
