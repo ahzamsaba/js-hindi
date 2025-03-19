@@ -56,4 +56,54 @@ function loginUserMessage2(username = "asghar"){
     return `${username} just logged in`
 }
 
-console.log(loginUserMessage2());//asghar just logged in
+// console.log(loginUserMessage2());//asghar just logged in
+
+
+
+
+
+/**********************FUNCTION-2**********************/
+
+
+// ... -> rest and spread both according to condition
+function calculateCartPrice(...num1){//rest
+    return num1;
+}
+
+// console.log(calculateCartPrice(100,200,300));//[ 100, 200, 300 ]
+
+
+function calculateCartPrice1(val1,val2,...num1){
+    return num1;
+}
+// console.log(calculateCartPrice1(100,200,300,2000));//[ 300, 2000 ]
+
+
+
+const user = {
+    username : "Ahzam",
+    price : 99
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// handleObject(user)//Username is Ahzam and price is 99
+
+/*
+handleObject({
+    username : "Asghar",
+    price : 500
+})// Username is Asghar and price is 500 */
+
+
+const myNewArr = [200,300,400,500]
+
+function getSecondValue(getArr){
+    return getArr[1]
+}
+
+// console.log(getSecondValue(myNewArr));// 300
+
+console.log(getSecondValue([1000,5000,10000]));// 5000
