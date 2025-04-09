@@ -1,11 +1,11 @@
 # Projects related to DOM
 
 ## project link
-[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-ye63yc28?file=index.html)
+[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-1szvwspc?file=7-scroll%2Fchaiaurcode.js)
 
 # Solution Code
 
-## project 1
+## project 1 -> Color Changer
 
 ```javascript
 const buttons = document.querySelectorAll('.button')
@@ -27,7 +27,7 @@ buttons.forEach(function(button){
 ```
 
 
-## project 2
+## project 2 -> BMI Calc
 ```javascript
 const form = document.querySelector('form')
 
@@ -57,7 +57,7 @@ form.addEventListener('submit',function(e){
 })
 ```
 
-## project 3
+## project 3 -> Digital Clock
 ```javascript
 // const clock = document.querySelector('#clock')
 const clock = document.getElementById('clock')
@@ -69,7 +69,7 @@ setInterval(function(){
 } , 1000)
 ```
 
-## project 4
+## project 4 -> Guess the Number
 ```javascript
 let randNumber = parseInt(Math.random() * 100 + 1);
 
