@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayAhzam = function(){
+        console.log("Ahzam");  
+    }
+    setTimeout(sayAhzam,2000)//print once Ahzam after 2 secs 
+    
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "JS series"
+    }
+    const changeMe = setTimeout(changeText,2000)//change 'h1' to JS series after 2 secs
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    })
+    //stop the evnt changeMe after click on button #stop
+</script>
+</html>

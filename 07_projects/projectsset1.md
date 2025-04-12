@@ -163,3 +163,59 @@ function newGame(){
   })
 }
 ```
+
+## project 5 -> Keyboard Check
+```javascript
+const insert = document.getElementById('insert')
+
+window.addEventListener('keydown',(e) => {
+  insert.innerHTML = `
+    <div class='color'>
+      <table>
+        <tr>
+          <th>Key</th>
+          <th>Key Code</th>
+          <th>Code</th>
+        </tr>
+        <tr>
+          <td>${e.key === ' ' ? 'Space' : e.key}</td>
+          <td>${e.keyCode}</td>
+          <td>${e.code}</td>
+        </tr>
+      </table>
+    </div>
+  `
+})
+```
+
+## project 6 -> Unlimited Colors
+```javascript
+const randColor = function(){
+  const hex = "0123456789ABCDEF"
+  let color = '#'
+  for(let i=0;i<6;i++){
+    color += hex[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
+
+let intervalId = null 
+
+const startChangingColor = function(){
+  if(intervalId==null){
+    intervalId = setInterval(changeBgColor,1000) 
+  }
+  function changeBgColor(){
+    document.body.style.backgroundColor = randColor()
+  }
+}
+
+const stopChangingColor = function(){
+  clearInterval(intervalId)
+  intervalId = null
+}
+
+document.getElementById('start').addEventListener('click',startChangingColor)
+
+document.getElementById('stop').addEventListener('click',stopChangingColor)
+```
