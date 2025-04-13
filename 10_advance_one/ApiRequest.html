@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest States</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #fff;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+
+        #cardContainer {
+        display: none;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        text-align: center;
+        }
+
+        #cardContainer img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        }
+
+        #showCardBtn {
+        padding: 10px 20px;
+        background-color: #03a9f4;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        }
+
+        #showCardBtn:hover {
+        background-color: #0288d1;
+        }
+    </style>
+</head>
+<body>
+    <h2>XMLHttpRequest Ready States</h2>
+    <table>
+        <tr>
+            <th>Value</th>
+            <th>State</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>UNSENT</td>
+            <td>Client has been created. <code>open()</code> not called yet.</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>OPENED</td>
+            <td><code>open()</code> has been called.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>HEADERS_RECEIVED</td>
+            <td><code>send()</code> has been called, and headers and status are available.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>LOADING</td>
+            <td>Downloading; <code>responseText</code> holds partial data.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DONE</td>
+            <td>The operation is complete.</td>
+        </tr>
+    </table>
+
+    <button id="showCardBtn">Show Hitesh Github info</button>
+    <div id="cardContainer">
+        <img src="" alt="Avatar" id="avatar">
+        <h3 id="username">Hitesh Choudhary</h3>
+        <p><strong>Followers:</strong> <span id="followers"></span></p>
+    </div>
+</body>
+<script>
+    // const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    // const xhr = new XMLHttpRequest()
+    
+    // xhr.open('GET',requestUrl)
+    // // console.log(xhr.readyState); //1
+
+    // xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState);//2 3 4
+    //     if(xhr.readyState === 4){
+    //         // console.log(this.responseText);
+    //         // const data = this.responseText
+    //         // console.log(data.following);//undefined
+    //         // console.log(typeof data);//string
+    //         // // response data is mostly in string format
+
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(typeof data);//object
+    //         console.log(data.followers);
+    //         console.log(this.responseText);
+            
+    //     }
+    // }
+
+    // xhr.send()
+
+    document.getElementById('showCardBtn').addEventListener('click',function(){
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET',requestUrl)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                document.getElementById('avatar').src = data.avatar_url
+                document.getElementById('followers').textContent = data.followers
+                document.getElementById('cardContainer').style.display = 'block'
+            }
+        }
+        xhr.send()
+    })
+</script>
+</html>
