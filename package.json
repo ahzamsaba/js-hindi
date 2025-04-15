@@ -1,0 +1,25 @@
+{
+  "name": "js-hindi",
+  "version": "1.0.0",
+  "description": "code repo for js series by chai aur code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahzamsaba/js-hindi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahzamsaba/js-hindi/issues"
+  },
+  "homepage": "https://github.com/ahzamsaba/js-hindi#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0"
+  }
+}
