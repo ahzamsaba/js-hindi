@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure & Chai</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <button id="orange" style="background-color: orange;">Orange</button>
+    <button id="green" style="background-color: green;">Green</button>    
+</body>
+
+<script>
+    // function init() {
+    //     var name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //         // displayName() is the inner function, that forms a closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+    // function outer(){
+    //     let username = 'ahzam'
+    //     function inner(){
+    //         console.log("Inner : ",username);
+    //         // Inner :  ahzam
+    //     }
+    //     inner()
+    // }
+    // outer()
+    // // console.log("Too outer",username);// Uncaught ReferenceError: username is not defined
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;//return whole lexical scope(i.e; inner & outer scope)
+    }
+    const myFunc = makeFunc();
+    myFunc();
+
+</script> 
+
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = 'orange'
+    //     this.style.border = '2px solid white'
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = 'green'
+    //     this.style.border = '2px solid white'
+    // }
+
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+</script>
+</html>
