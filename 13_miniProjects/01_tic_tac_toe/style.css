@@ -45,3 +45,58 @@
     transform: scale(0.95);
     background-color: #d80016;
 }
+
+
+#resetAllButton{
+    cursor: pointer;
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    font-family: "Permanent Marker",cursive;
+    color: aliceblue;
+    background-color: #1982c4;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#resetAllButton:hover {
+    background-color: #1479b8;
+    transform: scale(1.05);
+}
+
+#resetAllButton:active {
+    transform: scale(0.95);
+    background-color: #0d5f96;
+}
+
+
+#nameFormContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#nameForm input {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+
+#nameForm button {
+    padding: 8px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #06d6a0;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nameForm button:hover {
+    background-color: #04b88a;
+}

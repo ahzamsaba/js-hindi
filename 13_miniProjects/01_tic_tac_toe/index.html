@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #212121;color: #fff;">
+    <div id="nameFormContainer">
+        <h2>Enter Player Names</h2>
+        <form action="" id="nameForm">
+            <input type="text" id="playerXInput" placeholder="Player X Name" required>
+            <input type="text" id="playerOInput" placeholder="Player O Name" required>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
     <div id="gameContainer">
         <h1>Tic Tac Toe</h1>
         <div id="cellContainer">
@@ -21,7 +29,26 @@
             <div cellIndex ="8" class="cell"></div>
         </div>
         <h2 id="statusText"></h2>
+        <table id="scoreTable" style="margin: 20px auto; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="border: 2px solid white; padding: 10px;">Player</th>
+                    <th style="border: 2px solid white; padding: 10px;">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id = "playerXName" style="border: 1px solid white; padding: 10px;">Player X</td>
+                    <td id="scoreX" style="border: 1px solid white; padding: 10px;">0</td>
+                </tr>
+                <tr>
+                    <td id="playerOName" style="border: 1px solid white; padding: 10px;">Player O</td>
+                    <td id="scoreO" style="border: 1px solid white; padding: 10px;">0</td>
+                </tr>
+            </tbody>
+        </table>
         <button id="restartButton">Restart</button>
+        <button id="resetAllButton">Reset All</button>
     </div>
     <script src="index.js"></script>
 </body>

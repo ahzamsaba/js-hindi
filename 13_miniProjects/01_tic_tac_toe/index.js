@@ -17,12 +17,35 @@ let options = ["","","","","","","","",""]
 let currentPlayer = 'X'
 let running = false
 
-initializeGame()
+let scoreX = 0
+let scoreO = 0
+
+let playerXName = "Player X"
+let playerOName = "Player O"
+
+const nameFormContainer = document.getElementById('nameFormContainer')
+const nameForm = document.getElementById('nameForm')
+
+nameForm.addEventListener('submit',function(e){
+    e.preventDefault()
+    playerXName = document.getElementById('playerXInput').value || 'Player X'
+    playerOName = document.getElementById('playerOInput').value || 'Player O'
+    
+    document.getElementById('playerXName').textContent = `${playerXName}(X)`
+    document.getElementById('playerOName').textContent = `${playerOName}(O)`
+
+    nameFormContainer.style.display = 'none'
+    initializeGame()
+})
+
+// initializeGame()
 
 function initializeGame(){
     cells.forEach(cell => cell.addEventListener("click",cellClicked))
     restartButton.addEventListener("click",restartGame)
-    statusText.textContent = `${currentPlayer}'s turn`
+    const resetAllButton = document.querySelector("#resetAllButton")
+    resetAllButton.addEventListener("click",resetAll)
+    statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName}'s turn`
     running = true
 }
 
@@ -42,7 +65,7 @@ function updateCell(cell,index){
 
 function changePlayer(){
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
-    statusText.textContent = `${currentPlayer}'s turn`
+    statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName}'s turn`
 }
 
 function checkWinner(){
@@ -56,11 +79,20 @@ function checkWinner(){
             continue;
         if(cellA == cellB && cellB == cellC){
             roundOne = true
+            if(currentPlayer === 'X'){
+                scoreX++
+                document.getElementById('scoreX').textContent = scoreX
+            }
+            else{
+                scoreO++
+                document.getElementById('scoreO').textContent = scoreO
+            }
+
             break
         }
     }
     if(roundOne){
-        statusText.textContent = `${currentPlayer} wins`
+        statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName} wins`
         running = false
         startRestartTimer()
     }
@@ -92,4 +124,23 @@ function startRestartTimer(){
             restartGame()
         }
     }, 1000);
+}
+
+
+function resetAll(){
+    clearInterval(restartInterval)
+    scoreX = 0
+    scoreO = 0
+    document.getElementById('scoreX').textContent = scoreX
+    document.getElementById('scoreO').textContent = scoreO
+
+    document.getElementById('playerXInput').value = ''
+    document.getElementById('playerOInput').value = ''
+    document.getElementById('playerXName').textContent = "Player X"
+    document.getElementById('playerOName').textContent = "Player O"
+    playerXName = "Player X"
+    playerOName = "Player O"
+
+    nameFormContainer.style.display = 'block'
+    restartGame()
 }
