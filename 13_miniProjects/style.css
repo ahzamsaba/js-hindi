@@ -1,0 +1,47 @@
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 225px;
+    margin: auto;
+}
+
+#gameContainer{
+    font-family: "Permanent Marker",cursive;
+    text-align: center;
+}
+
+
+#restartButton{
+    cursor: pointer;
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    font-family: "Permanent Marker",cursive;
+    color: aliceblue;
+    background-color: #ff595e;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#restartButton:hover{
+    background-color: #ff1e2d;
+    transform: scale(1.05);
+}
+
+#restartButton:active{
+    transform: scale(0.95);
+    background-color: #d80016;
+}
