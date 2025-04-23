@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PONG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #212121;color: #fff;">
+    
+    <div id="gameContainer">
+        <form action="" id="startForm">
+            <label for="difficulty">Select difficulty</label>
+            <select name="" id="difficulty" required>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button type="submit" id="start">Start</button>
+        </form>
+        <!-- <button id="start">Start</button> -->
+        <canvas id="gameBoard" width="500" height="500"></canvas>
+        <div id="scoreText">0 : 0</div>
+        <button id="resetButton">Reset</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
