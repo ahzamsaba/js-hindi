@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #212121;color: #fff;">
+    <div id="nameFormContainer">
+        <h2>Enter player name : </h2>
+        <form action="" id="nameForm">
+            <input type="text" id="playerInput">
+            <button type="submit">Start game</button>
+        </form>
+    </div>
     <div id="gameContainer">
+        <h3 id="playerName" style="text-align: center; margin-top: 10px;"></h3>
         <canvas id="gameBoard" width="500" height="500"></canvas>
         <div id="scoreText">0</div>
         <button id="resetButton">Reset</button>

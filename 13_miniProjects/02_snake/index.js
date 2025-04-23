@@ -31,7 +31,21 @@ const minSpeed = 50
 window.addEventListener("keydown",changeDirection)
 resetBtn.addEventListener("click",resetGame)
 
-gameStart()
+
+let playerName = "Player"
+const nameFormContainer = document.getElementById('nameFormContainer')
+const nameForm = document.getElementById('nameForm')
+
+nameForm.addEventListener('submit',function(e){
+    e.preventDefault()
+    playerName = document.getElementById('playerInput').value || 'Player'
+
+    document.getElementById('playerName').textContent = playerName
+    nameFormContainer.style.display = 'none'
+    gameStart()
+})
+
+// gameStart()
 
 function gameStart(){
     running = true
@@ -167,18 +181,18 @@ function checkGameOver(){
             break
     }
 
-    // for(let i=1;i<snake.length;i++){
-    //     if(snake[i].x == snake[0].x && snake[i].y == snake[0].y){
-    //         running = false
-    //     }
-    // }
+    for(let i=1;i<snake.length;i++){
+        if(snake[i].x == snake[0].x && snake[i].y == snake[0].y){
+            running = false
+        }
+    }
 }
 
 function displayGameOver(){
-    ctx.font = "50px MV Boli"
+    ctx.font = "40px MV Boli"
     ctx.fillStyle = "aliceblue"
     ctx.textAlign = "center"
-    ctx.fillText("GAME OVER!", gameWidth/2, gameHeight/2)
+    ctx.fillText(`${playerName}, GAME OVER!`, gameWidth/2, gameHeight/2)
     running = false
 }
 
@@ -187,6 +201,7 @@ function resetGame(){
     xVelocity = unitSize
     yVelocity = 0
     speed = 150
+    running = false
     snake = [ 
         {x:unitSize*4, y:0},
         {x:unitSize*3, y:0},
@@ -194,5 +209,17 @@ function resetGame(){
         {x:unitSize, y:0},
         {x:0, y:0}
     ]
-    gameStart()
+
+    clearBoard()
+    const playerNameA = document.getElementById('playerName')
+    if(playerNameA) playerNameA.textContent = ''
+
+    // gameStart()
+    nameFormContainer.style.display = 'block'
+    document.getElementById('playerInput').value = ''
+}
+
+function clearBoard(){
+    ctx.fillStyle = boardBackground
+    ctx.fillRect(0,0, gameWidth, gameHeight)
 }

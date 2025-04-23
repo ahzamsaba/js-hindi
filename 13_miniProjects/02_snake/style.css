@@ -21,3 +21,31 @@
     border-radius: 15px;
     cursor: pointer;
 }
+
+#nameFormContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#nameForm input {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+
+#nameForm button {
+    padding: 8px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #06d6a0;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nameForm button:hover {
+    background-color: #04b88a;
+}
