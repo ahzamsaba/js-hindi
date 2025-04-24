@@ -21,7 +21,7 @@ body{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .gameText{
@@ -58,4 +58,14 @@ body{
     0% { transform: scale(1); }
     50% { transform: scale(0.92); }
     100% { transform: scale(1); }
+}
+
+.resetBtn {
+    background-color: crimson;
+    border: 2px solid #ff4d4d;
+    color: #fff;
+}
+
+.resetBtn:hover {
+    background-color: #ff4d4d;
 }
