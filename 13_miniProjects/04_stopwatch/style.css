@@ -1,0 +1,62 @@
+body{
+    background-color: #212121;
+    color: #fff;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerBtn{
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 12px;
+    background-color: lightcoral;
+    cursor: pointer;
+    font-family: consolas, monospace;
+    font-weight: bold;
+}
+.timerBtn:hover{
+    scale: 1.05;
+}
+.timerBtn:active{
+    scale: 0.95;
+}
+
+#timeDisplay{
+    font-size: 75px;
+    color: aquamarine;
+    font-family: consolas, monospace;
+}
+
+#timeContainer{
+    display: inline-block;
+    text-align: center;
+    border: 3px solid;
+    border-radius: 25px;
+    background-color: rgb(14, 5, 19);
+    padding: 20px;
+    margin: 100px auto 0;
+}
+
+#lapTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: consolas, monospace;
+    max-height: 30px;
+    overflow-y: auto;
+}
+
+#lapTable th, #lapTable td {
+    border: 1px solid #fff;
+    padding: 8px 12px;
+    text-align: center;
+    color: white;
+}
+
+#lapTable th {
+    background-color: #333;
+}
