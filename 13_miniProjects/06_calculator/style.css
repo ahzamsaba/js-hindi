@@ -69,3 +69,71 @@ button:active{
 .operator-btn:active{
     background-color: hsl(39, 100%, 75%);
 }
+
+#history-btn {
+    position: relative;
+}
+
+#history-btn::after {
+    content: 'History';
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#history-btn:hover::after {
+    opacity: 0.5;
+}
+
+#history-screen{
+    padding: 20px;
+    background-color: hsl(0, 0%, 20%);
+    color: aliceblue;
+    text-align: center;
+}
+
+#history-list{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#history-list li{
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+#bt2{
+    width: 100px;
+    aspect-ratio: 1/1;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsl(0, 66%, 65%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#bt2:hover{
+    background-color: hsl(0, 68%, 50%);
+}
+
+#bt2:active{
+    background-color: hsl(0, 75%, 60%);
+}

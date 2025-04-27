@@ -1,4 +1,7 @@
 const display = document.getElementById('display')
+const keys = document.getElementById('keys')
+const historyScreen = document.getElementById('history-screen')
+const historyList = document.getElementById('history-list')
 let e = false
 
 function appendToDisplay(input){
@@ -16,7 +19,11 @@ function clearDisplay(){
 
 function calculate(){
     try{
-        display.value = eval(display.value)
+        const exp = display.value
+        const res = eval(exp)
+        display.value = res
+
+        saveToHistory(exp + ' = ' + res)
         display.scrollLeft = display.scrollWidth
     }
     catch(error){
@@ -24,6 +31,40 @@ function calculate(){
         display.value = "Error"
         display.scrollLeft = display.scrollWidth
     }
+}
+
+function saveToHistory(entry){
+    let history = JSON.parse(localStorage.getItem('history')) || []
+    history.push(entry)
+    localStorage.setItem('history',JSON.stringify(history))
+}
+
+function showHistory(){
+    display.style.display = 'none'
+    keys.style.display = 'none'
+    historyScreen.style.display = 'block'
+    loadHistory()
+}
+
+function loadHistory(){
+    historyList.innerHTML = ''
+    let history = JSON.parse(localStorage.getItem('history')) || []
+    history.forEach(item => {
+        const li = document.createElement('li')
+        li.textContent = item
+        historyList.appendChild(li)
+    })
+}
+
+function clearHistory(){
+    localStorage.removeItem('history')
+    loadHistory()
+}
+
+function backToCalculator(){
+    display.style.display = 'block'
+    keys.style.display = 'grid'
+    historyScreen.style.display = 'none'
 }
 
 document.addEventListener('keydown',function(event){
